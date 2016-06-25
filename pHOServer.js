@@ -7,6 +7,7 @@
  * License:       MIT License <http://opensource.org/licenses/mit-license.php>
  * URL:           https://github.com/pH-7
  */
+'use strict';
 
 // Import HTTP node.js module
 var http = require('http');
@@ -52,6 +53,7 @@ var server = http.createServer(function(request, response) {
             }
         } else {
             var ext = path.extname(pathname);
+            var contentType;
 
             // Set the correct content type
             switch (ext) {
