@@ -1,7 +1,9 @@
 # pHOServer - Simple and Lite Dev HTTP Server
 
 ## Overview
-Simple and lite HTTP server made with [Node.js](https://nodejs.org) that doesn't require any configuration. Ideally to test or show (make a demonstration) of a static Web project.
+Simple and lite Dev HTTP server made with [Node.js](https://nodejs.org) that doesn't require any configuration.
+
+Ideal to test or show (make a demonstration) of a static Web project.
 
 
 ## Usage
