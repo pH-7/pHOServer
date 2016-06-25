@@ -1,3 +1,10 @@
+/*
+ * Author:        Pierre-Henry Soria <phs@hizup.net>
+ * Copyright:     (c) 2016, Pierre-Henry Soria. All Rights Reserved.
+ * License:       MIT License <http://opensource.org/licenses/mit-license.php>
+ * URL:           https://github.com/pH-7
+ */
+
 // Import HTTP node.js module
 var http = require('http');
 
@@ -20,41 +27,51 @@ var port = process.argv[2] || DEF_PORT;
 
 var server = http.createServer(function(request, response) {
     // Get the full path requested
-    var pathname = url.parse(request.url).pathname;
-    pathname = pathname.substr(1);
-/*
-    if (fs.statSync(pathname).isDirectory() && !fs.readFile(pathname.substr(1))) {
-        pathname += '/index.html';
-    }
-*/
+    var pathname = '.' + request.url;
 
-    if (pathname === '/') {
-          pathname += '/index.html';
+    if (pathname === './') {
+          pathname = './index.html';
     }
 
     console.log("Request for " + pathname);
 
     fs.readFile(pathname, function (error, data) {
-
         if (error) {
             console.log(error);
 
-            // HTTP Status: 404 : NOT FOUND
-            response.writeHead(404, {'Content-Type': 'text/html'});
-            response.write("404 - Page Not Found!\r\n");
+            if (error.code == 'ENOENT') {
+                // HTTP Status: 404 : NOT FOUND
+                response.writeHead(404, {'Content-Type': 'text/plain'});
+                response.write("404 - Page Not Found!\r\n");
+            } else {
+                response.writeHead(500, {'Content-Type': 'text/plain'});
+                response.write('Sorry, check with the site admin for error: ' + error.code + "\r\n");
+            }
         } else {
-             // Set the content type
             var ext = path.extname(pathname);
 
+            // Set the correct content type
             switch (ext) {
-                case '.gif':
-                     contentType = 'image/gif';
-                      break;
-                case '.jpg':
+                case '.js':
+                    contentType = 'text/javascript';
+                    break;
+                case '.css':
+                    contentType = 'text/css';
+                    break;
+                case '.json':
+                    contentType = 'application/json';
+                    break;
+                case '.jpg' || '.jpeg':
                     contentType = 'image/jpeg';
                     break;
                 case '.png':
                     contentType = 'image/png';
+                    break;
+                case '.gif':
+                     contentType = 'image/gif';
+                      break;
+                case '.wav':
+                    contentType = 'audio/wav';
                     break;
                 default:
                     contentType = 'text/html';
@@ -63,18 +80,7 @@ var server = http.createServer(function(request, response) {
             // HTTP Status: 200 : OK
             response.writeHead(200, {'Content-Type': contentType, 'X-Powered-By': SERVER_NAME, 'Server': SERVER_NAME});
 
-
-            // Write the content of the file to response body
-            response.write(data.toString());
-
-            // If binary file
-            if (contentType != 'text/html') {
-              file = fs.readFileSync(pathname);
-              response.end(file, 'binary');
-            } else {
-              // Send the response body
-              response.end();
-            }
+            response.end(data, 'utf-8');
         }
     });
 });
