@@ -17,6 +17,11 @@ Just run `pHOServer.js` with **node.js** (`$ node pHOServer.js 8000`) in the cur
 Historically, I made this very simple HTTP server in the goal to show a demonstration of a HTML5 Phaser game.
 
 
+## Fun
+
+If you are a nerd, you can/should do something very cool! It's using my [Web Browser (pHNavigo)](https://github.com/pH-7/pHNavigo) for requesting the contents from this [Web server (pHOServer)](https://github.com/pH-7/pHOServer).
+
+
 ## Requirement
 
 **Node.js** install (version 6 would be the best..)
