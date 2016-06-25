@@ -84,10 +84,10 @@ function pHOServer() {
                     if (error.code == 'ENOENT') {
                         // HTTP Status: 404 : NOT FOUND
                         response.writeHead(404, {'Content-Type': 'text/plain'});
-                        response.write("404 - Page Not Found!\r\n");
+                        response.end("404 - Page Not Found!\r\n");
                     } else {
                         response.writeHead(500, {'Content-Type': 'text/plain'});
-                        response.write('Sorry, check with the site admin for error: ' + error.code + "\r\n");
+                        response.end('Sorry, check with the site admin for error: ' + error.code + "\r\n");
                     }
                 } else {
                     var ext = me.path.extname(pathname);
