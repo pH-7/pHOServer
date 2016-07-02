@@ -24,7 +24,7 @@ If you are a nerd, you can/should do something very cool! It's using my [Web Bro
 
 ## Requirement
 
-**Node.js** install (version 6 would be the best..)
+**Node.js** installed (version 6 would be the best..)
 
 
 ## Author
