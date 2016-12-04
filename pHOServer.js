@@ -1,7 +1,7 @@
 /*
  * Description:   Simple and lite Dev HTTP server made with Node.js that doesn't require any configuration.
-                  Ideal to test or show (make a demonstration) of a static Web project.
-
+ *                Ideal to test or show (make a demonstration) of a static Web project.
+ *
  * Author:        Pierre-Henry Soria <phs@hizup.net>
  * Copyright:     (c) 2016, Pierre-Henry Soria. All Rights Reserved.
  * License:       MIT License <http://opensource.org/licenses/mit-license.php>
