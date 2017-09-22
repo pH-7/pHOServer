@@ -3,7 +3,7 @@
  *                Ideal to test or show (make a demonstration) of a static Web project.
  *
  * Author:        Pierre-Henry Soria <phs@hizup.net>
- * Copyright:     (c) 2016, Pierre-Henry Soria. All Rights Reserved.
+ * Copyright:     (c) 2016-2017, Pierre-Henry Soria. All Rights Reserved.
  * License:       MIT License <http://opensource.org/licenses/mit-license.php>
  * URL:           https://github.com/pH-7
  */
