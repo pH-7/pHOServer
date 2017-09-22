@@ -14,7 +14,7 @@ Just run `pHOServer.js` with **node.js** (`$ node pHOServer.js 8000`) in the cur
 
 ## History
 
-Historically, I made this very simple HTTP server in the goal to show a demonstration of a HTML5 Phaser game.
+Historically, I made this very simple HTTP server in order to show a demonstration of a HTML5 Phaser game I did.
 
 
 ## Fun
