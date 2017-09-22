@@ -29,12 +29,12 @@ If you are a nerd, you can/should do something very cool! It's using my [Web Bro
 
 ## Author
 
-Pierre-Henry Soria
+Made with lots of ♥ by **[Pierre-Henry Soria](http://ph7.me)**
 
 
 ## Contact
 
-Contact me at: `pierrehenrysoria {{ AT }} gmail {{ D0T }} com`
+Feel free to shoot me an email at `hi {{ AT }} ph7 {{ D0T }} me`
 
 
 ## License
